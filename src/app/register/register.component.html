@@ -1,0 +1,185 @@
+<div style="text-align: center">
+  <h1 style="color: red">Job Application Form</h1>
+</div>
+
+<div class="form-center" style="border-style: double;">
+  <form #registerForm="ngForm">
+    <div>
+      <div [class.has-error]="NameCon.invalid && NameCon.touched">
+        <h3 style="color: #008080; margin-top: 10px">Personal Info:</h3>
+        <label for="name" class="control-label">Name </label>
+        <input
+          #NameCon="ngModel"
+          type="text"
+          #name
+          (ngModel)="(name)"
+          name="name"
+          id="name"
+          class="form-control"
+          placeholder="Name"
+          required
+        />
+        <span
+          class="text-danger"
+          *ngIf="NameCon.invalid && NameCon.touched"
+          style="color: red"
+          >Name Required</span
+        >
+      </div>
+      <div [class.has-error]="EmailCon.invalid && EmailCon.touched">
+        <label for="email">Email </label>
+        <input
+          #EmailCon="ngModel"
+          type="text"
+          #email
+          (ngModel)="(email)"
+          name="email"
+          id="email"
+          class="form-control"
+          placeholder="Email Address"
+          required
+          ngModel
+          [email]="true"
+        />
+        <span
+          class="text-danger"
+          *ngIf="EmailCon.invalid && EmailCon.touched"
+          style="color: red"
+          >Please Enter Correct Email</span
+        >
+        <span class="text-danger" *ngIf=""></span>
+      </div>
+      <div [class.has-error]="NumCon.invalid && NumCon.touched">
+        <label for="phone">Phone Number </label>
+        <input
+          #NumCon="ngModel"
+          type="number"
+          #phone
+          (ngModel)="(phone)"
+          name="phone"
+          id="phone"
+          class="form-control"
+          placeholder="Phone Number"
+          required
+        />
+        <span
+          class="text-danger"
+          *ngIf="NumCon.invalid && NumCon.touched"
+          style="color: red"
+          >Phone Number Required</span
+        >
+      </div>
+      <div [class.has-error]="AddressCon.invalid && AddressCon.touched">
+        <label for="address">Address </label>
+        <input
+          #AddressCon="ngModel"
+          type="address"
+          #address
+          (ngModel)="(address)"
+          name="address"
+          id="address"
+          class="form-control"
+          placeholder="Address"
+          required
+        />
+        <span
+          class="text-danger"
+          *ngIf="AddressCon.invalid && AddressCon.touched"
+          style="color: red"
+          >Address Required</span
+        >
+      </div>
+      <div [class.has-error]="DegreeCon.invalid && DegreeCon.touched">
+        <h3 style="color: #008080; margin-top: 10px">Academic:</h3>
+        <label for="degree">Degree </label>
+        <input
+          #DegreeCon="ngModel"
+          type="degree"
+          #degree
+          (ngModel)="(degree)"
+          name="degree"
+          id="degree"
+          class="form-control"
+          placeholder="Degree"
+          required
+        />
+        <span
+          class="text-danger"
+          *ngIf="DegreeCon.invalid && DegreeCon.touched"
+          style="color: red"
+          >Degree Required</span
+        >
+      </div>
+      <div [class.has-error]="SchoolCon.invalid && SchoolCon.touched">
+        <label for="institute">School </label>
+        <input
+          #SchoolCon="ngModel"
+          type="institute"
+          #institute
+          (ngModel)="(institute)"
+          name="institute"
+          id="institute"
+          class="form-control"
+          placeholder="School Name"
+          required
+        />
+        <span
+          class="text-danger"
+          *ngIf="SchoolCon.invalid && SchoolCon.touched"
+          style="color: red"
+          >School Required</span
+        >
+      </div>
+      <div [class.has-error]="DegreeCon.invalid && DegreeCon.touched">
+        <h3 style="color: #008080; margin-top: 10px">Experience:</h3>
+        <label for="achievement">Achievement </label>
+        <input
+          #AchievementCon="ngModel"
+          type="achievement"
+          #achievement
+          (ngModel)="(achievement)"
+          name="achievement"
+          id="achievement"
+          class="form-control"
+          placeholder="Achievement"
+          required
+        />
+        <span
+          class="text-danger"
+          *ngIf="AchievementCon.invalid && AchievementCon.touched"
+          style="color: red"
+          >Achievement Required</span
+        >
+      </div>
+      <div [class.has-error]="ExperienceCon.invalid && ExperienceCon.touched">
+        <label for="experience">Experience </label>
+        <input
+          #ExperienceCon="ngModel"
+          type="number"
+          #experience
+          (ngModel)="(experience)"
+          name="experience"
+          id="experience"
+          class="form-control"
+          placeholder="Experience Years"
+          required
+        />
+        <span
+          class="text-danger"
+          *ngIf="ExperienceCon.invalid && ExperienceCon.touched"
+          style="color: red"
+          >Experience Required</span
+        >
+      </div>
+      <div class="form-group">
+        <input
+          type="submit"
+          value="Submit"
+          class="btn btn-primary w-100"
+          [disabled]="registerForm.invalid"
+          style="color: white; background-color: #008080; border-color: #006400"
+        />
+      </div>
+    </div>
+  </form>
+</div>

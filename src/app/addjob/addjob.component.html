@@ -1,0 +1,105 @@
+<div style="text-align: center">
+  <h1 style="color: red">Add Job</h1>
+</div>
+
+<div class="form-center" style="border-style: double">
+  <form #addjobForm="ngForm">
+    <div>
+      <div [class.has-error]="OfficeCon.invalid && OfficeCon.touched">
+        <label for="office" class="control-label">Office </label>
+        <input
+          #OfficeCon="ngModel"
+          type="text"
+          #office
+          (ngModel)="(office)"
+          name="office"
+          id="office"
+          class="form-control"
+          placeholder="Office Name"
+          required
+        />
+        <span
+          class="text-danger"
+          *ngIf="OfficeCon.invalid && OfficeCon.touched"
+          style="color: red"
+          >Office Name Required</span
+        >
+      </div>
+      <div [class.has-error]="LocationCon.invalid && LocationCon.touched">
+        <label for="location">Location </label>
+        <input
+          #LocationCon="ngModel"
+          type="text"
+          #location
+          (ngModel)="(location)"
+          name="location"
+          id="location"
+          class="form-control"
+          placeholder="Office Location"
+          required
+        />
+        <span
+          class="text-danger"
+          *ngIf="LocationCon.invalid && LocationCon.touched"
+          style="color: red"
+          >Please Enter Office Location</span
+        >
+        <span class="text-danger" *ngIf=""></span>
+      </div>
+      <div [class.has-error]="DepartmentCon.invalid && DepartmentCon.touched">
+        <label for="department">Department </label>
+        <input
+          #DepartmentCon="ngModel"
+          type="text"
+          #department
+          (ngModel)="(department)"
+          name="department"
+          id="department"
+          class="form-control"
+          placeholder="Department"
+          required
+        />
+        <span
+          class="text-danger"
+          *ngIf="DepartmentCon.invalid && DepartmentCon.touched"
+          style="color: red"
+          >Depart Name Required</span
+        >
+      </div>
+      <div [class.has-error]="TitleCon.invalid && TitleCon.touched">
+        <label for="jobtitle">Job Title </label>
+        <input
+          #TitleCon="ngModel"
+          type="jobtitle"
+          #jobtitle
+          (ngModel)="(jobtitle)"
+          name="jobtitle"
+          id="jobtitle"
+          class="form-control"
+          placeholder="Job Title"
+          required
+        />
+        <span
+          class="text-danger"
+          *ngIf="TitleCon.invalid && TitleCon.touched"
+          style="color: red"
+          >Address Required</span
+        >
+
+        <div class="form-group">
+          <input
+            type="submit"
+            value="Submit"
+            class="btn btn-primary w-100"
+            [disabled]="addjobForm.invalid"
+            style="
+              color: white;
+              background-color: #008080;
+              border-color: #006400;
+            "
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
